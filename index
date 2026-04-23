@@ -2115,6 +2115,7 @@ function buildPalette(r,g,b){
   document.getElementById('paletteOutput').style.display='block';
 }
 function renderSw(id,arr){document.getElementById(id).innerHTML=arr.map(s=>`<div class="sw"><div class="sw-c" style="background:${s.h}"></div><span class="sw-n">${s.n}</span></div>`).join('');}
+</script>
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -2123,7 +2124,6 @@ function renderSw(id,arr){document.getElementById(id).innerHTML=arr.map(s=>`<div
         .catch(error => console.log('SW registration failed'));
     });
   }
-</script>
 </script>
 </body>
 </html>
