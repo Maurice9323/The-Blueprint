@@ -52,9 +52,9 @@ body{background:var(--earth);color:var(--cream);font-family:'DM Sans',sans-serif
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(28,18,8,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,.1);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
+nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(28,18,8,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,.1);display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;}
 .nav-mark{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--gold-lt);letter-spacing:.5px;}
-.nav-links{list-style:none;display:flex;gap:2rem;}
+.nav-links{display:none;}
 .nav-links a{font-size:.52rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,237,216,.3);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--cream);}
 
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
     var(--earth);
 }
 .adinkra-bg{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='%23D4A017' stroke-width='1.5'/%3E%3Ccircle cx='40' cy='40' r='20' fill='none' stroke='%23D4A017' stroke-width='1'/%3E%3Cline x1='10' y1='40' x2='70' y2='40' stroke='%23D4A017' stroke-width='1'/%3E%3Cline x1='40' y1='10' x2='40' y2='70' stroke='%23D4A017' stroke-width='1'/%3E%3C/svg%3E");background-size:80px 80px;}
-.hero-inner{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:5rem;gap:4rem;}
+.hero-inner{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1fr;align-items:start;padding:2.5rem 1.25rem;gap:1.5rem;}
 .hero-eyebrow{display:flex;align-items:center;gap:.75rem;font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:var(--terra-lt);margin-bottom:1.75rem;opacity:0;animation:rise .6s .1s forwards;}
 .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--terra);}
 .hero-hl{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(3.2rem,6.5vw,7rem);line-height:.92;margin-bottom:2rem;opacity:0;animation:rise .9s .2s forwards;}
@@ -83,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .chip{font-size:.5rem;letter-spacing:2px;text-transform:uppercase;padding:.3rem 1rem;border:1px solid rgba(212,160,23,.22);color:var(--gold);}
 .chip.terra{border-color:rgba(196,98,42,.28);color:var(--terra-lt);}
 
-.hero-right{display:flex;flex-direction:column;gap:2px;opacity:0;animation:rise .8s .35s forwards;}
+.hero-right{display:none;}
 .hstat{background:rgba(44,26,10,.7);border:1px solid var(--rim);padding:1.6rem 2rem;display:flex;justify-content:space-between;align-items:flex-start;backdrop-filter:blur(8px);}
 .hs-lbl{font-size:.46rem;letter-spacing:3px;text-transform:uppercase;color:var(--fog);margin-bottom:.3rem;}
 .hs-val{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--cream);}
@@ -96,7 +96,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
 /* TIMELINE */
-.tl-bar{position:relative;z-index:2;background:rgba(44,26,10,.9);border-top:1px solid rgba(212,160,23,.1);display:grid;grid-template-columns:repeat(5,1fr);}
+.tl-bar{display:none;}
 .tlp{padding:1.5rem 2rem;border-right:1px solid var(--rim);}
 .tlp:last-child{border-right:none;}
 .tl-n{font-family:'Playfair Display',serif;font-style:italic;font-size:2.2rem;font-weight:900;color:rgba(212,160,23,.1);line-height:1;margin-bottom:.3rem;}
@@ -105,7 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .tl-when{font-size:.64rem;color:var(--fog);margin-top:.15rem;}
 
 /* LAYOUT */
-.section{max-width:1300px;margin:0 auto;padding:90px 4rem;}
+.section{max-width:100%;margin:0 auto;padding:56px 1.25rem;}
 .eyebrow{display:flex;align-items:center;gap:.75rem;font-size:.52rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
 .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);opacity:.5;}
 .sec-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4vw,4.5rem);font-weight:900;line-height:1.0;margin-bottom:.75rem;}
@@ -115,7 +115,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .rule{width:100vw;margin-left:calc(-50vw + 50%);height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,.1),transparent);}
 
 /* CALLOUTS */
-.callout{padding:2rem 2.5rem;margin-bottom:2.5rem;border-left:3px solid var(--gold);background:var(--gold-dim);}
+.callout{padding:1.25rem 1rem;margin-bottom:1.5rem;border-left:3px solid var(--gold);background:var(--gold-dim);}
 .callout h4{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:.75rem;}
 .callout p{font-size:.87rem;color:var(--cream);line-height:1.95;}
 .callout strong{color:var(--gold-lt);}
@@ -132,9 +132,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .callout.forest strong{color:var(--forest-lt);}
 
 /* GRIDS */
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.g2{display:grid;grid-template-columns:1fr;gap:2px;}
+.g3{display:grid;grid-template-columns:1fr;gap:2px;}
+.g4{display:grid;grid-template-columns:1fr;gap:2px;}
 
 /* PRODUCT CARDS */
 .product-card{background:var(--panel);padding:2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;transition:background .2s;}
@@ -217,7 +217,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .comes-list li::before{content:'→';position:absolute;left:0;color:var(--go-lt);}
 
 /* SKINCARE */
-.sk-step{display:flex;gap:1.5rem;padding:1.5rem;background:var(--raised);margin-bottom:2px;}
+.sk-step{display:flex;flex-direction:column;gap:.75rem;padding:1.25rem;background:var(--raised);margin-bottom:2px;}
 .sk-n{font-family:'Playfair Display',serif;font-style:italic;font-size:2.2rem;font-weight:900;color:rgba(212,160,23,.14);flex-shrink:0;width:2rem;line-height:1;margin-top:-.15rem;}
 .sk-lbl{font-size:.48rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.28rem;}
 .sk-prod{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:.28rem;}
@@ -234,7 +234,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .tab-btn:hover{color:var(--cream);}
 .tab-btn.active{color:var(--gold-lt);border-bottom-color:var(--gold-lt);}
 .tab-pane{display:none;padding:3.5rem 0;}
-.tab-pane.active{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.tab-pane.active{display:flex;flex-direction:column;gap:2rem;}
 .occ-intro{font-size:.88rem;color:var(--cream-dim);line-height:2.0;margin-bottom:2rem;}
 .formula{border:1px solid rgba(212,160,23,.14);padding:2rem;position:relative;margin-bottom:2rem;}
 .formula::before{content:'THE FORMULA';position:absolute;top:-.52rem;left:1.5rem;background:var(--earth);padding:0 .5rem;font-size:.44rem;letter-spacing:3px;color:var(--gold);}
@@ -251,7 +251,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .shop-price{font-size:.72rem;color:var(--gold-lt);letter-spacing:.5px;flex-shrink:0;}
 
 /* IDENTITY */
-.iw-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-bottom:2.5rem;}
+.iw-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2.5rem;}
 .iw-card{background:var(--panel);padding:2rem;text-align:center;position:relative;overflow:hidden;}
 .iw-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-lt),transparent);opacity:.4;}
 .iw-word{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;font-style:italic;color:var(--cream);margin-bottom:.4rem;}
@@ -265,7 +265,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .brief-body{font-size:.9rem;color:var(--cream-dim);line-height:2.0;max-width:820px;}
 .brief-body strong{color:var(--cream);}
 
-.icons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.icons-grid{display:grid;grid-template-columns:1fr;gap:2px;}
 .icon-card{background:var(--panel);padding:3rem 2.5rem;transition:background .3s;position:relative;overflow:hidden;}
 .icon-card:hover{background:var(--raised);}
 .icon-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-lt),transparent);transform:scaleX(0);transition:transform .4s;transform-origin:left;}
@@ -289,7 +289,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .bar-f{height:100%;background:var(--gold-lt);}
 
 /* COLOR ANALYZER */
-.color-layout{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.color-layout{display:grid;grid-template-columns:1fr;gap:2px;}
 .upload-panel{background:var(--panel);padding:3rem;display:flex;flex-direction:column;gap:1.5rem;}
 .drop{border:1px dashed rgba(212,160,23,.22);padding:3rem 2rem;text-align:center;cursor:pointer;position:relative;transition:all .3s;}
 .drop:hover{border-color:var(--gold-lt);background:var(--gold-dim);}
@@ -319,207 +319,66 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .adinkra-divider{text-align:center;padding:1.5rem 0;color:rgba(212,160,23,.25);font-size:1.5rem;letter-spacing:1.5rem;}
 
 /* DC BANNER */
-.dc-banner{background:linear-gradient(90deg,rgba(138,186,255,.06),rgba(212,160,23,.08),rgba(138,186,255,.06));border-top:1px solid rgba(138,186,255,.1);border-bottom:1px solid rgba(138,186,255,.1);padding:1.5rem 4rem;display:flex;align-items:center;gap:1.5rem;}
+.dc-banner{background:linear-gradient(90deg,rgba(138,186,255,.06),rgba(212,160,23,.08),rgba(138,186,255,.06));border-top:1px solid rgba(138,186,255,.1);border-bottom:1px solid rgba(138,186,255,.1);padding:1.25rem;display:flex;align-items:flex-start;gap:.75rem;}
 .dc-flag{font-size:1.5rem;}
 .dc-text{font-size:.8rem;color:var(--cream-dim);line-height:1.7;}
 .dc-text strong{color:var(--cream);}
 
-footer{padding:6rem 4rem 4rem;text-align:center;border-top:1px solid var(--rim);}
+footer{padding:3rem 1.25rem 2rem;text-align:center;border-top:1px solid var(--rim);}
 .footer-q{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.8rem,3.5vw,3.5rem);font-weight:900;color:rgba(212,160,23,.15);margin-bottom:2rem;line-height:1.1;}
 .footer-adinkra{font-size:2rem;color:rgba(212,160,23,.2);letter-spacing:1rem;margin-bottom:1.5rem;}
 .footer-note{font-size:.73rem;color:rgba(245,237,216,.2);letter-spacing:.5px;line-height:2.2;max-width:540px;margin:0 auto;}
 
-/* ===================== MOBILE RESPONSIVE ===================== */
-@media(max-width:900px){
-  /* --- GRIDS --- */
-  .hero-inner,.g2,.g3,.g4,.iw-grid,.icons-grid,.color-layout,.cat-card-grid,
-  [style*="grid-template-columns:1fr 1fr"],[style*="grid-template-columns: 1fr 1fr"],
-  [style*="grid-template-columns:repeat(2"],[style*="grid-template-columns:repeat(3"],
-  [style*="grid-template-columns:repeat(4"],[style*="grid-template-columns:repeat(5"]{
-    grid-template-columns:1fr !important;
-  }
-  /* Hero */
-  .hero-right,.tl-bar{display:none;}
-  .hero-inner{padding:3rem 1.5rem;}
-  .hero-hl{font-size:clamp(2.2rem,10vw,4rem);}
-  /* Nav */
-  nav{padding:0 1.25rem;}
-  .nav-links{display:none;}
-  /* Sections */
-  .section{padding:60px 1.25rem;}
-  nav,.dc-banner,footer{padding-left:1.25rem;padding-right:1.25rem;}
-  /* Tabs */
-  .tab-pane.active{grid-template-columns:1fr !important;}
-  /* Callouts */
-  .callout{padding:1.5rem 1.25rem;}
-  /* Cards */
-  .product-card,.frag-card,.purge-card,.cat-card,.hair-style-card{padding:1.5rem;}
-  /* Brief box */
-  .brief-box{padding:2rem 1.25rem;}
-  /* Skincare grid */
-  .g2>div,.g3>div,.g4>div{width:100%;}
-}
+/* ── IPHONE GLOBAL ── */
+body{overflow-x:hidden;}
+*{max-width:100%;word-break:break-word;}
+img,canvas{max-width:100% !important;height:auto;}
 
-/* ===================== MOBILE TABLE STYLES ===================== */
-@media(max-width:900px){
-  /* Prevent horizontal scroll globally */
-  body{overflow-x:hidden;}
-  *{max-width:100%;word-break:break-word;}
-  img,canvas{max-width:100% !important;}
+/* Override every inline grid style */
+[style*="grid-template-columns"]{grid-template-columns:1fr !important;}
 
-  /* --- TABLE CARD TRANSFORM --- */
-  /* Hide thead but keep it for JS label reading */
-  .basics-table thead,
-  .budget-table thead,
-  [style*="border-collapse:collapse"] thead,
-  table thead{
-    display:none !important;
-  }
+/* Mobile card table system */
+.mobile-table{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.5rem;}
+.mob-header{padding:.75rem 1rem;font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--gold-lt);}
+.mob-row{background:var(--panel);padding:.9rem 1rem;border:1px solid rgba(212,160,23,.1);}
+.mob-row.basics-urgent{border-left:3px solid var(--alert-lt);}
+.mob-row.mob-tfoot{background:rgba(212,160,23,.06);border-color:rgba(212,160,23,.2);}
+.mob-row.total{background:rgba(212,160,23,.08);}
+.mob-cell{padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.mob-cell:last-child{border-bottom:none;}
+.mob-lbl{display:block;font-size:.44rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;opacity:.7;}
+.mob-val{font-size:.79rem;color:var(--cream);line-height:1.6;}
+.mob-val.cat-col{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;}
+.mob-val.when-col{color:var(--gold-lt);font-size:.72rem;}
+.mob-val.toss-col{color:rgba(192,80,80,.85);font-size:.75rem;}
+.mob-val.buy-col{color:var(--go-lt);font-size:.75rem;}
+.mob-val.brand-col{color:var(--terra-lt);font-size:.72rem;}
+.bar-t{min-width:50px;}
 
-  /* Each row becomes a card */
-  .basics-table tr,
-  .budget-table tr,
-  [style*="border-collapse:collapse"] tr,
-  table tr{
-    display:block !important;
-    background:var(--panel);
-    border:1px solid rgba(212,160,23,.12);
-    margin-bottom:.75rem;
-    padding:.5rem 0;
-  }
+/* Typography scale */
+.sec-title{font-size:clamp(1.9rem,7vw,3.5rem);}
+.hero-hl{font-size:clamp(2.4rem,10vw,4.5rem);}
+.brief-q{font-size:clamp(1.15rem,5vw,1.8rem);}
+.footer-q{font-size:clamp(1.2rem,6vw,2.2rem);}
 
-  /* Colspan header rows (phase labels) stay full width */
-  .basics-table tr td[colspan],
-  .budget-table tr td[colspan],
-  table tr td[colspan],
-  [style*="border-collapse:collapse"] tr td[colspan]{
-    display:block !important;
-    width:100% !important;
-    border-bottom:1px solid rgba(212,160,23,.15) !important;
-    padding:.85rem 1rem !important;
-  }
+/* Tab bar horizontal scroll */
+.tab-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.tab-btn{padding:.9rem 1.25rem;}
 
-  /* Each cell becomes a label+value pair */
-  .basics-table td,
-  .budget-table td,
-  [style*="border-collapse:collapse"] td,
-  table td{
-    display:block !important;
-    padding:.55rem 1rem .55rem 1rem !important;
-    border-bottom:1px solid rgba(255,255,255,.04) !important;
-    font-size:.8rem !important;
-    line-height:1.6 !important;
-    text-align:left !important;
-  }
+/* Wrap flex rows */
+.hero-chips,.fc-notes,.sw-row{flex-wrap:wrap;}
 
-  /* The data-label (added by JS) shows as the label above the value */
-  table td[data-label]::before,
-  .basics-table td[data-label]::before,
-  .budget-table td[data-label]::before{
-    content:attr(data-label);
-    display:block;
-    font-size:.46rem;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin-bottom:.25rem;
-    opacity:.7;
-  }
+/* Product/purge cards */
+.product-card,.frag-card,.purge-card,.cat-card,.hair-style-card{padding:1.25rem;}
 
-  /* tfoot total rows */
-  table tfoot tr{
-    background:rgba(212,160,23,.06) !important;
-    border:1px solid rgba(212,160,23,.18) !important;
-  }
+/* Brief box */
+.brief-box{padding:1.75rem 1.25rem;}
 
-  /* Progress bars in tables */
-  .bar-t{min-width:60px;}
+/* Frag card */
+.frag-card{padding:1.75rem 1.25rem;}
 
-  /* --- SPECIFIC GRIDS THAT USE INLINE STYLES --- */
-  /* Weekly rhythm g4 */
-  .g4>div{padding:1.25rem;}
-
-  /* Watch rotation 2-col grids inside lists */
-  li [style*="display:grid"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* Barber 2-col */
-  div[style*="grid-template-columns:1fr 1fr"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* Identity 3-col inside panel */
-  div[style*="grid-template-columns:repeat(3,1fr)"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* 5-col quick-start step cards */
-  div[style*="grid-template-columns:repeat(5,1fr)"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* Sneaker care 3-col */
-  div[style*="grid-template-columns:1fr 1fr 1fr"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* Suede care 2-col */
-  div[style*="grid-template-columns:1fr 1fr;gap:2px"]{
-    grid-template-columns:1fr !important;
-  }
-
-  /* Shopping list table wrapper */
-  .budget-wrap{overflow-x:hidden;}
-
-  /* Tab bar scrolls horizontally — keep that */
-  .tab-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-
-  /* Fragrance cards 2-col */
-  .g2.frag{grid-template-columns:1fr !important;}
-
-  /* Footer */
-  footer{padding:3rem 1.25rem 2rem;}
-  .footer-q{font-size:clamp(1.2rem,6vw,2rem);}
-
-  /* DC Banner */
-  .dc-banner{flex-direction:column;gap:.75rem;padding:1.25rem;}
-
-  /* Section max-width */
-  .section{max-width:100%;}
-
-  /* Skincare steps */
-  .sk-step{flex-direction:column;gap:.75rem;}
-  .sk-n{width:auto;}
-
-  /* Color layout — stack upload above results */
-  .color-layout{grid-template-columns:1fr !important;}
-  #myCanvas{max-height:220px;}
-
-  /* IW grid 5-col identity words */
-  .iw-grid{grid-template-columns:1fr 1fr !important;}
-
-  /* Icons grid 3-col */
-  .icons-grid{grid-template-columns:1fr !important;}
-
-  /* Cat cards 2-col */
-  .g2 .cat-card{width:100%;}
-
-  /* Purge cards 2-col */
-  .g2 .purge-card{width:100%;}
-
-  /* Chip wrap */
-  .hero-chips{flex-wrap:wrap;}
-
-  /* Occasion tab pane goes 1-col */
-  .tab-pane.active{display:flex !important;flex-direction:column !important;gap:2rem !important;}
-
-  /* Frag card notes wrap */
-  .fc-notes{flex-wrap:wrap;}
-
-  /* All inline flex that could overflow */
-  [style*="display:flex"][style*="gap"]{flex-wrap:wrap;}
-}
+/* Font sizes for small labels */
+.sec-sub{font-size:.84rem;}
 </style>
 </head>
 <body>
@@ -737,48 +596,43 @@ footer{padding:6rem 4rem 4rem;text-align:center;border-top:1px solid var(--rim);
   </div>
 
   <div style="background:var(--panel);overflow:hidden;margin-bottom:3rem;">
-    <table class="basics-table">
-      <thead>
-        <tr><th>Category</th><th>Replace When</th><th>What Gets Tossed</th><th>What You Buy</th><th>Best Options</th></tr>
-      </thead>
-      <tbody>
-        <tr class="basics-urgent">
-          <td class="cat-col">Underwear</td>
-          <td class="when-col">⚡ Week 1 Right Now</td>
-          <td class="toss-col">Anything with stretched waistbands, thinning fabric, holes, or more than 12–18 months old. Boxers that bunch under fitted pants.</td>
-          <td class="buy-col">Boxer briefs only. Not boxers (they bunch), not briefs. 5–7 pairs minimum. Replace the entire drawer at once — not one at a time.</td>
-          <td class="brand-col">Tommy John, MeUndies, Saxx, Calvin Klein Modern Cotton. Budget: $50–120 for a full fresh drawer.</td>
-        </tr>
-        <tr class="basics-urgent">
-          <td class="cat-col">Dress Socks</td>
-          <td class="when-col">⚡ Week 1 Right Now</td>
-          <td class="toss-col">Holes, thinning heels, loose elastic, faded black that's now grey, white gym socks worn with anything other than sneakers.</td>
-          <td class="buy-col">7–10 pairs in black, navy, charcoal, one pattern. Mid-calf length only — never ankle socks with dress pants or Chelsea boots.</td>
-          <td class="brand-col">Gold Toe, Bombas, Stance, Darn Tough. Target multipacks work fine. Budget: $40–80 for a full set.</td>
-        </tr>
-        <tr class="basics-urgent">
-          <td class="cat-col">Athletic Socks</td>
-          <td class="when-col">⚡ Week 1 — Reassign</td>
-          <td class="toss-col">Any gym sock being worn with casual outfits. The gym shoes stay in the gym — the gym socks go with them.</td>
-          <td class="buy-col">No-show socks in white and grey for sneakers. Low-cut athletic socks that don't show above the shoe when wearing loafers or Oxfords.</td>
-          <td class="brand-col">Nike Everyday No-Show, Bombas No-Show. Budget: $20–30.</td>
-        </tr>
-        <tr>
-          <td class="cat-col">Undershirts</td>
-          <td class="when-col">Month 1 — Early Priority</td>
-          <td class="toss-col">All A-shirts — you said you never wear them, so they shouldn't even be there. Any crew-neck that shows above your tees or open collar shirts. Any yellowed or stretched undershirts.</td>
-          <td class="buy-col">V-neck undershirts only — they disappear under open-collar shirts and fitted tees without showing at the neckline. 5–7 pairs in white and grey. Tagless only — tags create visible lines under fitted shirts.</td>
-          <td class="brand-col">Uniqlo Airism V-Neck (best overall — moisture-wicking, minimal bulk), Hanes Ultimate V-Neck. Budget: $30–60 for a full set. Uniqlo Airism is the move especially in DC summers.</td>
-        </tr>
-        <tr>
-          <td class="cat-col">Annual Refresh</td>
-          <td class="when-col">Every 12–18 Months</td>
-          <td class="toss-col">Full drawer — regardless of visible wear. Elastics weaken over time even when the fabric looks fine. 12–18 months is the standard for boxer briefs.</td>
-          <td class="buy-col">Replace the full drawer at once. Calendar reminder: "Replace basics." Buy a new set every year during sales — Black Friday or Prime Day. One shopping trip, done.</td>
-          <td class="brand-col">Annual refresh budget: $80–120. Set the reminder now so it doesn't slip.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mobile-table">
+<div class="mob-row basics-urgent">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val cat-col">Underwear</div></div>
+<div class="mob-cell"><span class="mob-lbl">Replace When</span><div class="mob-val when-col">⚡ Week 1 Right Now</div></div>
+<div class="mob-cell"><span class="mob-lbl">What Gets Tossed</span><div class="mob-val toss-col">Anything with stretched waistbands, thinning fabric, holes, or more than 12–18 months old. Boxers that bunch under fitted pants.</div></div>
+<div class="mob-cell"><span class="mob-lbl">What You Buy</span><div class="mob-val buy-col">Boxer briefs only. Not boxers (they bunch), not briefs. 5–7 pairs minimum. Replace the entire drawer at once — not one at a time.</div></div>
+<div class="mob-cell"><span class="mob-lbl">Best Options</span><div class="mob-val brand-col">Tommy John, MeUndies, Saxx, Calvin Klein Modern Cotton. Budget: $50–120 for a full fresh drawer.</div></div>
+</div>
+<div class="mob-row basics-urgent">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val cat-col">Dress Socks</div></div>
+<div class="mob-cell"><span class="mob-lbl">Replace When</span><div class="mob-val when-col">⚡ Week 1 Right Now</div></div>
+<div class="mob-cell"><span class="mob-lbl">What Gets Tossed</span><div class="mob-val toss-col">Holes, thinning heels, loose elastic, faded black that's now grey, white gym socks worn with anything other than sneakers.</div></div>
+<div class="mob-cell"><span class="mob-lbl">What You Buy</span><div class="mob-val buy-col">7–10 pairs in black, navy, charcoal, one pattern. Mid-calf length only — never ankle socks with dress pants or Chelsea boots.</div></div>
+<div class="mob-cell"><span class="mob-lbl">Best Options</span><div class="mob-val brand-col">Gold Toe, Bombas, Stance, Darn Tough. Target multipacks work fine. Budget: $40–80 for a full set.</div></div>
+</div>
+<div class="mob-row basics-urgent">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val cat-col">Athletic Socks</div></div>
+<div class="mob-cell"><span class="mob-lbl">Replace When</span><div class="mob-val when-col">⚡ Week 1 — Reassign</div></div>
+<div class="mob-cell"><span class="mob-lbl">What Gets Tossed</span><div class="mob-val toss-col">Any gym sock being worn with casual outfits. The gym shoes stay in the gym — the gym socks go with them.</div></div>
+<div class="mob-cell"><span class="mob-lbl">What You Buy</span><div class="mob-val buy-col">No-show socks in white and grey for sneakers. Low-cut athletic socks that don't show above the shoe when wearing loafers or Oxfords.</div></div>
+<div class="mob-cell"><span class="mob-lbl">Best Options</span><div class="mob-val brand-col">Nike Everyday No-Show, Bombas No-Show. Budget: $20–30.</div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val cat-col">Undershirts</div></div>
+<div class="mob-cell"><span class="mob-lbl">Replace When</span><div class="mob-val when-col">Month 1 — Early Priority</div></div>
+<div class="mob-cell"><span class="mob-lbl">What Gets Tossed</span><div class="mob-val toss-col">All A-shirts — you said you never wear them, so they shouldn't even be there. Any crew-neck that shows above your tees or open collar shirts. Any yellowed or stretched undershirts.</div></div>
+<div class="mob-cell"><span class="mob-lbl">What You Buy</span><div class="mob-val buy-col">V-neck undershirts only — they disappear under open-collar shirts and fitted tees without showing at the neckline. 5–7 pairs in white and grey. Tagless only — tags create visible lines under fitted shirts.</div></div>
+<div class="mob-cell"><span class="mob-lbl">Best Options</span><div class="mob-val brand-col">Uniqlo Airism V-Neck (best overall — moisture-wicking, minimal bulk), Hanes Ultimate V-Neck. Budget: $30–60 for a full set. Uniqlo Airism is the move especially in DC summers.</div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val cat-col">Annual Refresh</div></div>
+<div class="mob-cell"><span class="mob-lbl">Replace When</span><div class="mob-val when-col">Every 12–18 Months</div></div>
+<div class="mob-cell"><span class="mob-lbl">What Gets Tossed</span><div class="mob-val toss-col">Full drawer — regardless of visible wear. Elastics weaken over time even when the fabric looks fine. 12–18 months is the standard for boxer briefs.</div></div>
+<div class="mob-cell"><span class="mob-lbl">What You Buy</span><div class="mob-val buy-col">Replace the full drawer at once. Calendar reminder: "Replace basics." Buy a new set every year during sales — Black Friday or Prime Day. One shopping trip, done.</div></div>
+<div class="mob-cell"><span class="mob-lbl">Best Options</span><div class="mob-val brand-col">Annual refresh budget: $80–120. Set the reminder now so it doesn't slip.</div></div>
+</div>
+</div>
   </div>
   <div class="callout">
     <h4>The Fit Rule for What Goes Underneath</h4>
@@ -866,58 +720,50 @@ footer{padding:6rem 4rem 4rem;text-align:center;border-top:1px solid var(--rim);
   <!-- DC CONTEXT RULES -->
   <h4 style="font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">FOOTWEAR CONTEXT RULES — DC EDITION</h4>
   <div style="background:var(--panel);overflow:hidden;margin-bottom:2.5rem;">
-    <table style="width:100%;border-collapse:collapse;">
-      <thead><tr>
-        <th style="text-align:left;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:.9rem 1.4rem;border-bottom:1px solid rgba(212,160,23,.12);">Occasion</th>
-        <th style="text-align:left;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:.9rem 1.4rem;border-bottom:1px solid rgba(212,160,23,.12);">Sneakers</th>
-        <th style="text-align:left;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:.9rem 1.4rem;border-bottom:1px solid rgba(212,160,23,.12);">Boots / Loafers / Oxfords</th>
-        <th style="text-align:left;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:.9rem 1.4rem;border-bottom:1px solid rgba(212,160,23,.12);">The Note</th>
-      </tr></thead>
-      <tbody>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">Hill meetings, committee briefings</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots or loafers</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">DC professional contexts — boots communicate intentionality that matters here</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">Public affairs office / DPW</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots or loafers</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">Same rule — DC government spaces read footwear as a professional signal</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);background:var(--gold-dim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">MPA classes / AU campus</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral only</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Either works</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">Panda Dunk High, black AJ1, or grey NB 993 work here. Bold colorways feel off on academic days.</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">Creative office (jeans allowed)</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral or earth tone</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots preferred</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">Panda Dunk, black AJ1, or NB 993 grey work. Bold Chicago or Royal Blue better saved for weekends.</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);background:var(--forest-dim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">Everyday DC / Errands / Community</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--forest-lt);border-color:rgba(42,154,72,.3);background:var(--forest-dim);">Full rotation</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Either works</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">This is where the rotation lives. Any colorway — neutral, earth, bold. Outfit context decides the specific pair.</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">DC Night Out / Lounges / Rooftops</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral or tonal</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots strongest</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">All-black Jordan or Panda Dunk works with the all-black tonal formula. Chelsea boots still the power night shoe.</td>
-        </tr>
-        <tr>
-          <td style="padding:.8rem 1.4rem;font-size:.79rem;color:var(--cream);">Formal / Galas / Hill Receptions</td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></td>
-          <td style="padding:.8rem 1.4rem;"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Black Oxford only</span></td>
-          <td style="padding:.8rem 1.4rem;font-size:.74rem;color:var(--cream-dim);">Black cap-toe Oxford shoes always. No exceptions at formal DC events.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mobile-table">
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">Hill meetings, committee briefings</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots or loafers</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">DC professional contexts — boots communicate intentionality that matters here</div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">Public affairs office / DPW</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots or loafers</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">Same rule — DC government spaces read footwear as a professional signal</div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);background:var(--gold-dim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">MPA classes / AU campus</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral only</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Either works</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">Panda Dunk High, black AJ1, or grey NB 993 work here. Bold colorways feel off on academic days.</div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">Creative office (jeans allowed)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral or earth tone</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots preferred</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">Panda Dunk, black AJ1, or NB 993 grey work. Bold Chicago or Royal Blue better saved for weekends.</div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);background:var(--forest-dim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">Everyday DC / Errands / Community</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--forest-lt);border-color:rgba(42,154,72,.3);background:var(--forest-dim);">Full rotation</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Either works</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">This is where the rotation lives. Any colorway — neutral, earth, bold. Outfit context decides the specific pair.</div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">DC Night Out / Lounges / Rooftops</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:var(--gold-dim);">Clean neutral or tonal</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Chelsea boots strongest</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">All-black Jordan or Panda Dunk works with the all-black tonal formula. Chelsea boots still the power night shoe.</div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Occasion</span><div class="mob-val">Formal / Galas / Hill Receptions</div></div>
+<div class="mob-cell"><span class="mob-lbl">Sneakers</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--alert-lt);border-color:rgba(192,80,80,.3);background:rgba(139,32,32,.1);">Sneakers Out</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Boots / Loafers / Oxfords</span><div class="mob-val"><span style="font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.14rem .4rem;border:1px solid;color:var(--go-lt);border-color:rgba(72,184,120,.3);background:rgba(26,80,48,.12);">Black Oxford only</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">The Note</span><div class="mob-val">Black cap-toe Oxford shoes always. No exceptions at formal DC events.</div></div>
+</div>
+</div>
   </div>
 
   <!-- SILHOUETTE CARDS -->
@@ -1575,26 +1421,99 @@ footer{padding:6rem 4rem 4rem;text-align:center;border-top:1px solid var(--rim);
   <h2 class="sec-title">$1,500 <em>Spent Right</em></h2>
   <p class="sec-sub">Phase 0 costs almost nothing. Phase 1 is the highest impact per dollar. The blazer in Phase 2 is the most important single silhouette purchase. Everything else builds from there in order of impact.</p>
   <div class="budget-wrap">
-    <table class="budget-table">
-      <thead><tr><th>Category</th><th>What</th><th>Phase</th><th>Budget</th><th>Impact</th></tr></thead>
-      <tbody>
-        <tr><td>Basics Refresh <span class="ptag">WEEK 1</span></td><td>Full drawer replacement — boxer briefs, dress socks, no-show socks, V-neck undershirts</td><td>0</td><td>$120–170</td><td><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></td></tr>
-        <tr><td>Shoes <span class="ptag">PHASE 1</span></td><td>AF1 White (9.5) + Thursday Chelsea (9) + Suede Loafers (9)</td><td>1</td><td>$370</td><td><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></td></tr>
-        <tr><td>Bottoms <span class="ptag">PHASE 1</span></td><td>541 Black + 541 Dark Indigo + Olive Chinos, all hemmed 28"</td><td>1</td><td>$200</td><td><div class="bar-t"><div class="bar-f" style="width:95%"></div></div></td></tr>
-        <tr><td>Korean Skincare <span class="ptag">PHASE 1</span></td><td>Full 10-product rebuild — all products listed in Skin section</td><td>1</td><td>$205</td><td><div class="bar-t"><div class="bar-f" style="width:90%"></div></div></td></tr>
-        <tr><td>Tops + Olive Bomber <span class="ptag">PHASE 2</span></td><td>Athletic-fit tees ×8 in deep tones + dark olive bomber</td><td>2</td><td>$250</td><td><div class="bar-t"><div class="bar-f" style="width:85%"></div></div></td></tr>
-        <tr><td>Navy Blazer 44 Short <span class="ptag">PHASE 2</span></td><td>Single-breasted, structured shoulders — most important silhouette buy</td><td>2</td><td>$200</td><td><div class="bar-t"><div class="bar-f" style="width:88%"></div></div></td></tr>
-        <tr><td>Tailor <span class="ptag">ONGOING</span></td><td>Hems ×5, shirt tapers ×3, collar alterations ×2 — non-negotiable throughout</td><td>All</td><td>$150</td><td><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></td></tr>
-        <tr><td>Fragrance Phase 3</td><td>Start with Bleu de Chanel + Maison Margiela Sailing Day after sampling</td><td>3</td><td>~$300</td><td><div class="bar-t"><div class="bar-f" style="width:65%"></div></div></td></tr>
-        <tr><td>Suit + Accessories Phase 4</td><td>Navy SuitSupply 44 Short + Cuban chain + Seiko Presage + Citizen Tsuyosa</td><td>4</td><td>Next $900+</td><td><div class="bar-t"><div class="bar-f" style="width:45%"></div></div></td></tr>
-      </tbody>
-      <tfoot>
-        <tr class="total"><td>Phase 0 Basics</td><td>Full drawer replacement</td><td>0</td><td>$140–210</td><td></td></tr>
-        <tr class="total"><td>Phase 1 Foundation</td><td>Footwear + Skincare + Hair + Sneaker Care</td><td>1</td><td>$900–1,050</td><td></td></tr>
-        <tr class="total"><td>Phase 2 Wardrobe</td><td>Tops + Blazer + Layers + Belts + Tailor</td><td>2</td><td>$600–800</td><td></td></tr>
-        <tr class="total" style="border-top:2px solid rgba(212,160,23,.2);"><td><strong>Phase 0–2 Complete</strong></td><td>Full visual transformation</td><td>0–2</td><td><strong>~$1,650–2,060</strong></td><td></td></tr>
-      </tfoot>
-    </table>
+    <div class="mobile-table">
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Basics Refresh <span class="ptag">WEEK 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Full drawer replacement — boxer briefs, dress socks, no-show socks, V-neck undershirts</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">0</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$120–170</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Shoes <span class="ptag">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">AF1 White (9.5) + Thursday Chelsea (9) + Suede Loafers (9)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$370</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Bottoms <span class="ptag">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">541 Black + 541 Dark Indigo + Olive Chinos, all hemmed 28"</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$200</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:95%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Korean Skincare <span class="ptag">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Full 10-product rebuild — all products listed in Skin section</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$205</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:90%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Tops + Olive Bomber <span class="ptag">PHASE 2</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Athletic-fit tees ×8 in deep tones + dark olive bomber</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$250</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:85%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Navy Blazer 44 Short <span class="ptag">PHASE 2</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Single-breasted, structured shoulders — most important silhouette buy</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$200</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:88%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Tailor <span class="ptag">ONGOING</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Hems ×5, shirt tapers ×3, collar alterations ×2 — non-negotiable throughout</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">All</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$150</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:100%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Fragrance Phase 3</div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Start with Bleu de Chanel + Maison Margiela Sailing Day after sampling</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">~$300</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:65%"></div></div></div></div>
+</div>
+<div class="mob-row">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Suit + Accessories Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Navy SuitSupply 44 Short + Cuban chain + Seiko Presage + Citizen Tsuyosa</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">Next $900+</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"><div class="bar-t"><div class="bar-f" style="width:45%"></div></div></div></div>
+</div>
+<div class="mob-row total mob-tfoot">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Phase 0 Basics</div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Full drawer replacement</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">0</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$140–210</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"></div></div>
+</div>
+<div class="mob-row total mob-tfoot">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Phase 1 Foundation</div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Footwear + Skincare + Hair + Sneaker Care</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$900–1,050</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"></div></div>
+</div>
+<div class="mob-row total mob-tfoot">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val">Phase 2 Wardrobe</div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Tops + Blazer + Layers + Belts + Tailor</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val">$600–800</div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"></div></div>
+</div>
+<div class="mob-row total mob-tfoot" style="border-top:2px solid rgba(212,160,23,.2);">
+<div class="mob-cell"><span class="mob-lbl">Category</span><div class="mob-val"><strong>Phase 0–2 Complete</strong></div></div>
+<div class="mob-cell"><span class="mob-lbl">What</span><div class="mob-val">Full visual transformation</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">0–2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Budget</span><div class="mob-val"><strong>~$1,650–2,060</strong></div></div>
+<div class="mob-cell"><span class="mob-lbl">Impact</span><div class="mob-val"></div></div>
+</div>
+</div>
   </div>
 </div>
 
@@ -1606,414 +1525,368 @@ footer{padding:6rem 4rem 4rem;text-align:center;border-top:1px solid var(--rim);
   <p class="sec-sub">Every product in this guide in one place, organized by phase, with direct buy links. Use this when you're ready to execute a phase. Start with Phase 0 — it costs almost nothing and changes how everything else feels.</p>
 
   <div style="background:var(--panel);overflow:hidden;">
-    <table style="width:100%;border-collapse:collapse;">
-      <thead>
-        <tr>
-          <th style="text-align:left;font-family:'Playfair Display',serif;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(212,160,23,.12);">Item</th>
-          <th style="text-align:left;font-family:'Playfair Display',serif;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(212,160,23,.12);">Where to Buy</th>
-          <th style="text-align:left;font-family:'Playfair Display',serif;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(212,160,23,.12);">Phase</th>
-          <th style="text-align:left;font-family:'Playfair Display',serif;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(212,160,23,.12);">Cost</th>
-          <th style="text-align:left;font-family:'Playfair Display',serif;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(212,160,23,.12);">Priority</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- PHASE 0 -->
-        <tr style="background:rgba(26,74,40,.12);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--forest-lt);">Phase 0 — Week 1 · Basics (Do This First)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Boxer Briefs ×5–7 (Tommy John, MeUndies, Saxx)</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Brand websites or Amazon</td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$50–120</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Dress Socks ×7–10 (black, navy, charcoal)</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Gold Toe, Bombas, Target</td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$40–80</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">No-Show Athletic Socks ×6 — <a href="https://www.nike.com/w/mens-socks-2dg78z6ymx6znik1" target="_blank" style="color:var(--gold-lt);">Nike Everyday No-Show</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.nike.com/w/mens-socks-2dg78z6ymx6znik1" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$20–30</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">V-Neck Undershirts ×5–7 — <a href="https://www.uniqlo.com/us/en/men/innerwear/airism/v-neck" target="_blank" style="color:var(--gold-lt);">Uniqlo AIRism V-Neck</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.uniqlo.com/us/en/men/innerwear/airism/v-neck" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo.com — $14.90 ea</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">MONTH 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$30–60</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-
-        <!-- PHASE 1 FOOTWEAR -->
-        <tr style="background:rgba(212,160,23,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);">Phase 1 — Month 1–2 · Foundation</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541-athletic-taper-mens-jeans/p/181810422" target="_blank" style="color:var(--gold-lt);">Levi's 541 Athletic Straight — Black</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541-athletic-taper-mens-jeans/p/181810422" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Levi's.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$50–70 + hem</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541TM-athletic-taper-fit-mens-jeans/p/181810692" target="_blank" style="color:var(--gold-lt);">Levi's 541 Athletic Straight — Dark Indigo</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541TM-athletic-taper-fit-mens-jeans/p/181810692" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Levi's.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$50–70 + hem</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://thursdayboots.com/products/mens-lincoln-penny-loafer-cider-suede" target="_blank" style="color:var(--gold-lt);">Thursday Boot Lincoln Penny Loafer — Tan Suede</a> (size 9)</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://thursdayboots.com/products/mens-lincoln-penny-loafer-cider-suede" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$149</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.jcrew.com/p/mens/categories/clothing/pants-and-chinos/athletic/1040-athletic-fit-stretch-chino-pant/AV209" target="_blank" style="color:var(--gold-lt);">J.Crew 1040 Athletic Stretch Chino — Olive</a> (buy 38–40, hem 28")</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.jcrew.com/p/mens/categories/clothing/pants-and-chinos/athletic/1040-athletic-fit-stretch-chino-pant/AV209" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">JCrew.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$80–100</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://thursdayboots.com/products/mens-cavalier-chelsea-boot-black" target="_blank" style="color:var(--gold-lt);">Thursday Boot Cavalier Chelsea — Black</a> (size 9)</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://thursdayboots.com/products/mens-cavalier-chelsea-boot-black" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$199</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.newbalance.com/pd/made-in-usa-993/MR993V1-10103.html" target="_blank" style="color:var(--forest-lt);">New Balance 993 Made in USA</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.newbalance.com/pd/made-in-usa-993/MR993V1-10103.html" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">NewBalance.com</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">PHASE 1</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$199</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.nike.com/w/mens-dunk-high-top-shoes-6lqy0z90aohznik1zy7ok" target="_blank" style="color:var(--forest-lt);">Nike Dunk High Retro</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.nike.com/w/mens-dunk-high-top-shoes-6lqy0z90aohznik1zy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://www.goat.com/sneakers/dunk-high-white-black-dd1399-105" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">GOAT</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$130–160+</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.nike.com/w/jordan-shoes-37eefzy7ok" target="_blank" style="color:var(--forest-lt);">Air Jordan Collection (1–13)</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.nike.com/w/jordan-shoes-37eefzy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://stockx.com/air-jordan?sneakerSize=9" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">StockX</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$185–$$$</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:92%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.nike.com/w/dunk-skateboarding-shoes-8mfrfz90aohzy7ok" target="_blank" style="color:var(--forest-lt);">Nike SB Dunk High</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.nike.com/w/dunk-skateboarding-shoes-8mfrfz90aohzy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://stockx.com/nike/dunks" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">StockX</a></td>
-          <td style="padding:.8rem 1.5rem;"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$140–$$$</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:88%;"></div></div></td>
-        </tr>
-
-        <!-- SKINCARE PHASE 1 -->
-        <tr style="background:rgba(26,74,40,.08);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--forest-lt);">Phase 1 — Sneaker Care Kit (for your existing collection)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Jason-Markk-Premium-Shoe-Cleaner/dp/B001MXGUR4" target="_blank" style="color:var(--gold-lt);">Jason Markk Premium Shoe Cleaner Kit</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Jason-Markk-Premium-Shoe-Cleaner/dp/B001MXGUR4" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$12</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Crep-Protect-Ultimate-Sneaker-Protector/dp/B07MQDQ2JY" target="_blank" style="color:var(--gold-lt);">Crep Protect Spray</a> — apply before first wear on every pair</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Crep-Protect-Ultimate-Sneaker-Protector/dp/B07MQDQ2JY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$15</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/s?k=cedar+shoe+trees+mens" target="_blank" style="color:var(--gold-lt);">Cedar Shoe Trees</a> — one pair per leather shoe/boot</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/s?k=cedar+shoe+trees+mens" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$12–20/pair</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:88%;"></div></div></td>
-        </tr>
-        <tr style="background:rgba(192,80,32,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--terra-lt);">Phase 1 — Korean Skincare (All 10 Products)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/COSRX-Good-Morning-Cleanser-150ml/dp/B016NRXO06" target="_blank" style="color:var(--gold-lt);">COSRX Low pH Good Morning Gel Cleanser</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/COSRX-Good-Morning-Cleanser-150ml/dp/B016NRXO06" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$12</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/COSRX-Clarifying-Treatment-Gentle-Exfoliator/dp/B00BKBHJHS" target="_blank" style="color:var(--gold-lt);">COSRX AHA/BHA Clarifying Treatment Toner</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/COSRX-Clarifying-Treatment-Gentle-Exfoliator/dp/B00BKBHJHS" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$14</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.yesstyle.com/en/axis-y-dark-spot-correcting-glow-serum/info.html/pid.1096882280" target="_blank" style="color:var(--gold-lt);">AXIS-Y Dark Spot Correcting Glow Serum</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.yesstyle.com/en/axis-y-dark-spot-correcting-glow-serum/info.html/pid.1096882280" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">YesStyle</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$20</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/COSRX-Oil-Free-Ultra-Moisturizing-Lotion/dp/B00MCAUXJA" target="_blank" style="color:var(--gold-lt);">COSRX Oil-Free Ultra-Moisturizing Lotion</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/COSRX-Oil-Free-Ultra-Moisturizing-Lotion/dp/B00MCAUXJA" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$14</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><strong><a href="https://www.amazon.com/SKIN1004-Madagascar-Centella-Water-Fit-Sunscreen/dp/B09P21WJKP" target="_blank" style="color:var(--gold-lt);">Skin1004 Centella Water-Fit Sun Serum SPF50+</a></strong> ← Non-Negotiable</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/SKIN1004-Madagascar-Centella-Water-Fit-Sunscreen/dp/B09P21WJKP" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$18–22</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Banila-Clean-Cleansing-Sherbet-Texture/dp/B00PEF8S1G" target="_blank" style="color:var(--gold-lt);">Banila Co Clean It Zero Cleansing Balm</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Banila-Clean-Cleansing-Sherbet-Texture/dp/B00PEF8S1G" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$16</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/ANUA-Heartleaf-Soothing-Toner-250ml/dp/B09WLPRTZL" target="_blank" style="color:var(--gold-lt);">Anua Heartleaf 77% Soothing Toner</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/ANUA-Heartleaf-Soothing-Toner-250ml/dp/B09WLPRTZL" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$20</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Niacinamide-Tranexamic-Hyaluronic-Sensitive-Fragrance-Free/dp/B0CLLV2T1P" target="_blank" style="color:var(--gold-lt);">Anua Niacinamide 10% + TXA 4% Dark Spot Serum</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Niacinamide-Tranexamic-Hyaluronic-Sensitive-Fragrance-Free/dp/B0CLLV2T1P" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$20</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/COSRX-Advanced-Snail-96-Mucin/dp/B00PBX3L7K" target="_blank" style="color:var(--gold-lt);">COSRX Advanced Snail 92 All In One Cream</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/COSRX-Advanced-Snail-96-Mucin/dp/B00PBX3L7K" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$22</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Cosrx-Bha-Blackhead-Power-Liquid/dp/B00OZEJ8R8" target="_blank" style="color:var(--gold-lt);">COSRX BHA Blackhead Power Liquid</a> (2–3x weekly)</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Cosrx-Bha-Blackhead-Power-Liquid/dp/B00OZEJ8R8" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$23</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.sephora.com/product/laneige-lip-sleeping-mask-P420652" target="_blank" style="color:var(--gold-lt);">Laneige Lip Sleeping Mask</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.sephora.com/product/laneige-lip-sleeping-mask-P420652" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$24</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:88%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Dr-Bronners-Organic-Beeswax-Lip-Balm/dp/B00FL16IZQ" target="_blank" style="color:var(--gold-lt);">Dr. Bronner's Organic Lip Balm</a> — your daytime lip product, pairs with the body wash</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Dr-Bronners-Organic-Beeswax-Lip-Balm/dp/B00FL16IZQ" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · Whole Foods</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 1</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$4–5</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></td>
-        </tr>
-
-        <!-- PHASE 2 -->
-        <tr style="background:rgba(212,160,23,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);">Phase 2 — Month 2–4 · Tops, Layers & Body Care</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Athletic-Fit Tees ×8 — deep tones, no graphics</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.uniqlo.com/us/en/men/t-shirts" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo</a>, H&M, Target</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$15–40 ea</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Navy Single-Breasted Blazer — 44 Short</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.suitsupply.com/en-US/men/blazers" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply</a>, Banana Republic</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$150–300</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:92%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Dark Olive Bomber Jacket</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.uniqlo.com/us/en/men/outerwear" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo</a>, Todd Snyder, ASOS</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$80–200</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:85%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Black Leather Jacket (moto or bomber)</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">AllSaints, Schott NYC, ASOS</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$180–350</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:82%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Tailor — Hems ×5, shirt tapers ×3, collar alts ×2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Find 4.5+ star local tailor</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Ongoing</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$150</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="background:rgba(26,74,40,.08);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--forest-lt);">Phase 1 — Hair + Beard Products (Start Immediately)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/USDA-Organic-Jojoba-Oil-Unrefined/dp/B01A74442I" target="_blank" style="color:var(--gold-lt);">Cliganic Organic Jojoba Oil</a> — beard oil for oily skin. Non-comedogenic, pure jojoba only</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/USDA-Organic-Jojoba-Oil-Unrefined/dp/B01A74442I" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Now</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$9</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/SheaMoisture-Coconut-Hibiscus-Enhancing-Smoothie/dp/B07NQJWQYY" target="_blank" style="color:var(--gold-lt);">SheaMoisture Curl Enhancing Smoothie</a> — curl cream for wash & go</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/SheaMoisture-Coconut-Hibiscus-Enhancing-Smoothie/dp/B07NQJWQYY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · Walmart</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Now</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$12</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/ECO-Style-Gel-Olive-Ounce/dp/B00JFXNLK4" target="_blank" style="color:var(--gold-lt);">Eco Styler Olive Oil Gel</a> — hold layer on top of curl cream</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/ECO-Style-Gel-Olive-Ounce/dp/B00JFXNLK4" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · BSS</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Now</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$5</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/Gold-Bond-Radiance-Renewal-Lotion/dp/B00KWPJBRS" target="_blank" style="color:var(--gold-lt);">Gold Bond Radiance Renewal Body Lotion</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/Gold-Bond-Radiance-Renewal-Lotion/dp/B00KWPJBRS" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$10–14</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:88%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/CeraVe-Therapeutic-Hand-Cream-Ounce/dp/B00440YRZY" target="_blank" style="color:var(--gold-lt);">CeraVe Therapeutic Hand Cream</a></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.amazon.com/CeraVe-Therapeutic-Hand-Cream-Ounce/dp/B00440YRZY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$12</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:85%;"></div></div></td>
-        </tr>
-
-        <!-- PHASE 3 FRAGRANCE -->
-        <tr style="background:rgba(192,80,32,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--terra-lt);">Phase 3 — Month 3–5 · Fragrance (Sample First)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Fragrance samples — try before buying full bottles</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.scentbird.com" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Scentbird</a> · <a href="https://www.decantx.com" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">DecantX</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 3 first</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$8–20/sample</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.sephora.com/product/oud-wood-P393167" target="_blank" style="color:var(--gold-lt);">Tom Ford Oud Wood EDP</a> — Warm & Woody</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.sephora.com/product/oud-wood-P393167" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 3</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$180</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:75%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.sephora.com/product/bleu-de-chanel-eau-de-parfum-P394949" target="_blank" style="color:var(--gold-lt);">Bleu de Chanel EDP</a> — Cool & Sophisticated</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.sephora.com/product/bleu-de-chanel-eau-de-parfum-P394949" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 3</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$140</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:75%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://us.parfums-de-marly.com/products/layton" target="_blank" style="color:var(--gold-lt);">Parfums de Marly Layton</a> — Spicy & Bold</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://us.parfums-de-marly.com/products/layton" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Parfums de Marly</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 3</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$280</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:70%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.sephora.com/product/replica-sailing-day-P427008" target="_blank" style="color:var(--gold-lt);">Maison Margiela Replica — Sailing Day</a> — Fresh & Clean</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.sephora.com/product/replica-sailing-day-P427008" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 3</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$165</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:70%;"></div></div></td>
-        </tr>
-
-        <!-- PHASE 4 -->
-        <tr style="background:rgba(212,160,23,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);">Bag — Phase 2–3 (Upgrade When Ready)</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://bellroy.com/products/classic-tote" target="_blank" style="color:var(--gold-lt);">Bellroy Classic Tote</a> — black or charcoal, laptop sleeve, Hill to street</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://bellroy.com/products/classic-tote" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Bellroy.com</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2–3</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">~$169</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:72%;"></div></div></td>
-        </tr>
-        <tr style="background:rgba(212,160,23,.06);">
-          <td colspan="5" style="padding:.8rem 1.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);">Phase 4 — Month 6–12 · The Complete Man</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Long Black Overcoat — mid-thigh+, structured shoulders, 44R <em style="font-size:.72rem;color:var(--fog);">(you have coats — this is the upgrade if you want one)</em></td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.suitsupply.com/en-US/men/coats/overcoats/" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply</a> · <a href="https://www.asos.com/men/coats-jackets/cat/?cid=1462&q=wool+overcoat" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ASOS</a> · <a href="https://www.nordstrom.com/browse/clothing/men/coats-jackets?filterByProductType=clothing_coats%2Fovercoat" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nordstrom</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 2</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$150–350</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:72%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Navy Suit — SuitSupply Havana 44 Short (fully tailored)</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://www.suitsupply.com/en-US/men/suits/navy" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply.com</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 4</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$400–600 + alts</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:62%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://thursdayboots.com/products/mens-black-captain" target="_blank" style="color:var(--gold-lt);">Thursday Boot Captain — Black Cap-Toe Oxford</a> (size 9)</td>
-          <td style="padding:.8rem 1.5rem;"><a href="https://thursdayboots.com/products/mens-black-captain" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 4</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$199</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:65%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.amazon.com/SEIKO-Silver-Stainless-Presage-Automatic/dp/B0B88JLPC4" target="_blank" style="color:var(--gold-lt);">Seiko Presage Style60's SSA447</a> — day watch, leather strap, automatic</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Amazon or Seiko.com</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 4</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$150–280</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:58%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);"><a href="https://www.citizenwatch.com/us/en/product/NJ0150-56E.html" target="_blank" style="color:var(--gold-lt);">Citizen Tsuyosa NJ0150-56E</a> — night watch, black dial, steel bracelet</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Amazon or Citizen.com</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 4</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$200–400</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:52%;"></div></div></td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--rim);">
-          <td style="padding:.8rem 1.5rem;font-size:.8rem;color:var(--cream);">Gold Cuban Chain — 20", 4–6mm, vermeil or 10k gold (20" = right length for 5'5" open collar)</td>
-          <td style="padding:.8rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Amazon Gold, Local jeweler</td>
-          <td style="padding:.8rem 1.5rem;font-size:.72rem;color:var(--cream-dim);">Phase 4</td>
-          <td style="padding:.8rem 1.5rem;font-size:.78rem;color:var(--cream);">$80–250</td>
-          <td style="padding:.8rem 1.5rem;"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:60%;"></div></div></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr style="border-top:1px solid rgba(212,160,23,.12);">
-          <td colspan="3" style="padding:1.1rem 1.5rem;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold-lt);">Phase 0 + 1 + 2 Complete</td>
-          <td style="padding:1.1rem 1.5rem;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold-lt);">~$1,500</td>
-          <td style="padding:1.1rem 1.5rem;font-size:.75rem;color:var(--cream-dim);">Visual transformation complete</td>
-        </tr>
-      </tfoot>
-    </table>
+    <div class="mobile-table">
+<div class="mob-header" style="background:rgba(26,74,40,.12);">Phase 0 — Week 1 · Basics (Do This First)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Boxer Briefs ×5–7 (Tommy John, MeUndies, Saxx)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Brand websites or Amazon</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$50–120</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Dress Socks ×7–10 (black, navy, charcoal)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Gold Toe, Bombas, Target</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$40–80</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">No-Show Athletic Socks ×6 — <a href="https://www.nike.com/w/mens-socks-2dg78z6ymx6znik1" target="_blank" style="color:var(--gold-lt);">Nike Everyday No-Show</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.nike.com/w/mens-socks-2dg78z6ymx6znik1" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">WEEK 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$20–30</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">V-Neck Undershirts ×5–7 — <a href="https://www.uniqlo.com/us/en/men/innerwear/airism/v-neck" target="_blank" style="color:var(--gold-lt);">Uniqlo AIRism V-Neck</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.uniqlo.com/us/en/men/innerwear/airism/v-neck" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo.com — $14.90 ea</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">MONTH 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$30–60</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(212,160,23,.06);">Phase 1 — Month 1–2 · Foundation</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541-athletic-taper-mens-jeans/p/181810422" target="_blank" style="color:var(--gold-lt);">Levi's 541 Athletic Straight — Black</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541-athletic-taper-mens-jeans/p/181810422" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Levi's.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$50–70 + hem</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541TM-athletic-taper-fit-mens-jeans/p/181810692" target="_blank" style="color:var(--gold-lt);">Levi's 541 Athletic Straight — Dark Indigo</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.levi.com/US/en_US/clothing/men/jeans/taper/541TM-athletic-taper-fit-mens-jeans/p/181810692" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Levi's.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$50–70 + hem</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-lincoln-penny-loafer-cider-suede" target="_blank" style="color:var(--gold-lt);">Thursday Boot Lincoln Penny Loafer — Tan Suede</a> (size 9)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-lincoln-penny-loafer-cider-suede" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$149</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.jcrew.com/p/mens/categories/clothing/pants-and-chinos/athletic/1040-athletic-fit-stretch-chino-pant/AV209" target="_blank" style="color:var(--gold-lt);">J.Crew 1040 Athletic Stretch Chino — Olive</a> (buy 38–40, hem 28")</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.jcrew.com/p/mens/categories/clothing/pants-and-chinos/athletic/1040-athletic-fit-stretch-chino-pant/AV209" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">JCrew.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$80–100</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-cavalier-chelsea-boot-black" target="_blank" style="color:var(--gold-lt);">Thursday Boot Cavalier Chelsea — Black</a> (size 9)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-cavalier-chelsea-boot-black" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(212,160,23,.12);color:var(--gold);border:1px solid rgba(212,160,23,.2);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$199</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.newbalance.com/pd/made-in-usa-993/MR993V1-10103.html" target="_blank" style="color:var(--forest-lt);">New Balance 993 Made in USA</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.newbalance.com/pd/made-in-usa-993/MR993V1-10103.html" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">NewBalance.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">PHASE 1</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$199</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.nike.com/w/mens-dunk-high-top-shoes-6lqy0z90aohznik1zy7ok" target="_blank" style="color:var(--forest-lt);">Nike Dunk High Retro</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.nike.com/w/mens-dunk-high-top-shoes-6lqy0z90aohznik1zy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://www.goat.com/sneakers/dunk-high-white-black-dd1399-105" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">GOAT</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$130–160+</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.nike.com/w/jordan-shoes-37eefzy7ok" target="_blank" style="color:var(--forest-lt);">Air Jordan Collection (1–13)</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.nike.com/w/jordan-shoes-37eefzy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://stockx.com/air-jordan?sneakerSize=9" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">StockX</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$185–$$$</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:92%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.nike.com/w/dunk-skateboarding-shoes-8mfrfz90aohzy7ok" target="_blank" style="color:var(--forest-lt);">Nike SB Dunk High</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.nike.com/w/dunk-skateboarding-shoes-8mfrfz90aohzy7ok" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nike.com</a> · <a href="https://stockx.com/nike/dunks" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">StockX</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val"><span style="font-family:'Playfair Display',serif;font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;padding:.12rem .38rem;background:rgba(26,74,40,.15);color:var(--forest-lt);border:1px solid rgba(42,154,72,.25);">ONGOING</span></div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$140–$$$</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:88%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(26,74,40,.08);">Phase 1 — Sneaker Care Kit (for your existing collection)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Jason-Markk-Premium-Shoe-Cleaner/dp/B001MXGUR4" target="_blank" style="color:var(--gold-lt);">Jason Markk Premium Shoe Cleaner Kit</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Jason-Markk-Premium-Shoe-Cleaner/dp/B001MXGUR4" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$12</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Crep-Protect-Ultimate-Sneaker-Protector/dp/B07MQDQ2JY" target="_blank" style="color:var(--gold-lt);">Crep Protect Spray</a> — apply before first wear on every pair</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Crep-Protect-Ultimate-Sneaker-Protector/dp/B07MQDQ2JY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$15</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/s?k=cedar+shoe+trees+mens" target="_blank" style="color:var(--gold-lt);">Cedar Shoe Trees</a> — one pair per leather shoe/boot</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/s?k=cedar+shoe+trees+mens" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$12–20/pair</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:88%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(192,80,32,.06);">Phase 1 — Korean Skincare (All 10 Products)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Good-Morning-Cleanser-150ml/dp/B016NRXO06" target="_blank" style="color:var(--gold-lt);">COSRX Low pH Good Morning Gel Cleanser</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Good-Morning-Cleanser-150ml/dp/B016NRXO06" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$12</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Clarifying-Treatment-Gentle-Exfoliator/dp/B00BKBHJHS" target="_blank" style="color:var(--gold-lt);">COSRX AHA/BHA Clarifying Treatment Toner</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Clarifying-Treatment-Gentle-Exfoliator/dp/B00BKBHJHS" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$14</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.yesstyle.com/en/axis-y-dark-spot-correcting-glow-serum/info.html/pid.1096882280" target="_blank" style="color:var(--gold-lt);">AXIS-Y Dark Spot Correcting Glow Serum</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.yesstyle.com/en/axis-y-dark-spot-correcting-glow-serum/info.html/pid.1096882280" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">YesStyle</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$20</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Oil-Free-Ultra-Moisturizing-Lotion/dp/B00MCAUXJA" target="_blank" style="color:var(--gold-lt);">COSRX Oil-Free Ultra-Moisturizing Lotion</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Oil-Free-Ultra-Moisturizing-Lotion/dp/B00MCAUXJA" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$14</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><strong><a href="https://www.amazon.com/SKIN1004-Madagascar-Centella-Water-Fit-Sunscreen/dp/B09P21WJKP" target="_blank" style="color:var(--gold-lt);">Skin1004 Centella Water-Fit Sun Serum SPF50+</a></strong> ← Non-Negotiable</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/SKIN1004-Madagascar-Centella-Water-Fit-Sunscreen/dp/B09P21WJKP" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$18–22</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Banila-Clean-Cleansing-Sherbet-Texture/dp/B00PEF8S1G" target="_blank" style="color:var(--gold-lt);">Banila Co Clean It Zero Cleansing Balm</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Banila-Clean-Cleansing-Sherbet-Texture/dp/B00PEF8S1G" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$16</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/ANUA-Heartleaf-Soothing-Toner-250ml/dp/B09WLPRTZL" target="_blank" style="color:var(--gold-lt);">Anua Heartleaf 77% Soothing Toner</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/ANUA-Heartleaf-Soothing-Toner-250ml/dp/B09WLPRTZL" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$20</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Niacinamide-Tranexamic-Hyaluronic-Sensitive-Fragrance-Free/dp/B0CLLV2T1P" target="_blank" style="color:var(--gold-lt);">Anua Niacinamide 10% + TXA 4% Dark Spot Serum</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Niacinamide-Tranexamic-Hyaluronic-Sensitive-Fragrance-Free/dp/B0CLLV2T1P" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$20</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Advanced-Snail-96-Mucin/dp/B00PBX3L7K" target="_blank" style="color:var(--gold-lt);">COSRX Advanced Snail 92 All In One Cream</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/COSRX-Advanced-Snail-96-Mucin/dp/B00PBX3L7K" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$22</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Cosrx-Bha-Blackhead-Power-Liquid/dp/B00OZEJ8R8" target="_blank" style="color:var(--gold-lt);">COSRX BHA Blackhead Power Liquid</a> (2–3x weekly)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Cosrx-Bha-Blackhead-Power-Liquid/dp/B00OZEJ8R8" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$23</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.sephora.com/product/laneige-lip-sleeping-mask-P420652" target="_blank" style="color:var(--gold-lt);">Laneige Lip Sleeping Mask</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.sephora.com/product/laneige-lip-sleeping-mask-P420652" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$24</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:88%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Dr-Bronners-Organic-Beeswax-Lip-Balm/dp/B00FL16IZQ" target="_blank" style="color:var(--gold-lt);">Dr. Bronner's Organic Lip Balm</a> — your daytime lip product, pairs with the body wash</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Dr-Bronners-Organic-Beeswax-Lip-Balm/dp/B00FL16IZQ" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · Whole Foods</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 1</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$4–5</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(212,160,23,.06);">Phase 2 — Month 2–4 · Tops, Layers & Body Care</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Athletic-Fit Tees ×8 — deep tones, no graphics</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.uniqlo.com/us/en/men/t-shirts" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo</a>, H&M, Target</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$15–40 ea</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:90%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Navy Single-Breasted Blazer — 44 Short</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.suitsupply.com/en-US/men/blazers" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply</a>, Banana Republic</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$150–300</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:92%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Dark Olive Bomber Jacket</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.uniqlo.com/us/en/men/outerwear" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Uniqlo</a>, Todd Snyder, ASOS</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$80–200</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:85%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Black Leather Jacket (moto or bomber)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">AllSaints, Schott NYC, ASOS</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$180–350</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:82%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Tailor — Hems ×5, shirt tapers ×3, collar alts ×2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Find 4.5+ star local tailor</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Ongoing</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$150</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(26,74,40,.08);">Phase 1 — Hair + Beard Products (Start Immediately)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/USDA-Organic-Jojoba-Oil-Unrefined/dp/B01A74442I" target="_blank" style="color:var(--gold-lt);">Cliganic Organic Jojoba Oil</a> — beard oil for oily skin. Non-comedogenic, pure jojoba only</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/USDA-Organic-Jojoba-Oil-Unrefined/dp/B01A74442I" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Now</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$9</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/SheaMoisture-Coconut-Hibiscus-Enhancing-Smoothie/dp/B07NQJWQYY" target="_blank" style="color:var(--gold-lt);">SheaMoisture Curl Enhancing Smoothie</a> — curl cream for wash & go</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/SheaMoisture-Coconut-Hibiscus-Enhancing-Smoothie/dp/B07NQJWQYY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · Walmart</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Now</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$12</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/ECO-Style-Gel-Olive-Ounce/dp/B00JFXNLK4" target="_blank" style="color:var(--gold-lt);">Eco Styler Olive Oil Gel</a> — hold layer on top of curl cream</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/ECO-Style-Gel-Olive-Ounce/dp/B00JFXNLK4" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a> · Target · BSS</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Now</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$5</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--forest-lt);width:95%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/Gold-Bond-Radiance-Renewal-Lotion/dp/B00KWPJBRS" target="_blank" style="color:var(--gold-lt);">Gold Bond Radiance Renewal Body Lotion</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/Gold-Bond-Radiance-Renewal-Lotion/dp/B00KWPJBRS" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$10–14</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:88%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/CeraVe-Therapeutic-Hand-Cream-Ounce/dp/B00440YRZY" target="_blank" style="color:var(--gold-lt);">CeraVe Therapeutic Hand Cream</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.amazon.com/CeraVe-Therapeutic-Hand-Cream-Ounce/dp/B00440YRZY" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Amazon</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$12</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:85%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(192,80,32,.06);">Phase 3 — Month 3–5 · Fragrance (Sample First)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Fragrance samples — try before buying full bottles</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.scentbird.com" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Scentbird</a> · <a href="https://www.decantx.com" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">DecantX</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 3 first</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$8–20/sample</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:100%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.sephora.com/product/oud-wood-P393167" target="_blank" style="color:var(--gold-lt);">Tom Ford Oud Wood EDP</a> — Warm & Woody</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.sephora.com/product/oud-wood-P393167" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$180</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:75%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.sephora.com/product/bleu-de-chanel-eau-de-parfum-P394949" target="_blank" style="color:var(--gold-lt);">Bleu de Chanel EDP</a> — Cool & Sophisticated</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.sephora.com/product/bleu-de-chanel-eau-de-parfum-P394949" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$140</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:75%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://us.parfums-de-marly.com/products/layton" target="_blank" style="color:var(--gold-lt);">Parfums de Marly Layton</a> — Spicy & Bold</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://us.parfums-de-marly.com/products/layton" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Parfums de Marly</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$280</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:70%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.sephora.com/product/replica-sailing-day-P427008" target="_blank" style="color:var(--gold-lt);">Maison Margiela Replica — Sailing Day</a> — Fresh & Clean</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.sephora.com/product/replica-sailing-day-P427008" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Sephora</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$165</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:70%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(212,160,23,.06);">Bag — Phase 2–3 (Upgrade When Ready)</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://bellroy.com/products/classic-tote" target="_blank" style="color:var(--gold-lt);">Bellroy Classic Tote</a> — black or charcoal, laptop sleeve, Hill to street</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://bellroy.com/products/classic-tote" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Bellroy.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2–3</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">~$169</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:72%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="background:rgba(212,160,23,.06);">Phase 4 — Month 6–12 · The Complete Man</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Long Black Overcoat — mid-thigh+, structured shoulders, 44R <em style="font-size:.72rem;color:var(--fog);">(you have coats — this is the upgrade if you want one)</em></div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.suitsupply.com/en-US/men/coats/overcoats/" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply</a> · <a href="https://www.asos.com/men/coats-jackets/cat/?cid=1462&q=wool+overcoat" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ASOS</a> · <a href="https://www.nordstrom.com/browse/clothing/men/coats-jackets?filterByProductType=clothing_coats%2Fovercoat" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">Nordstrom</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 2</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$150–350</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:72%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Navy Suit — SuitSupply Havana 44 Short (fully tailored)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://www.suitsupply.com/en-US/men/suits/navy" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">SuitSupply.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$400–600 + alts</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:62%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-black-captain" target="_blank" style="color:var(--gold-lt);">Thursday Boot Captain — Black Cap-Toe Oxford</a> (size 9)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val"><a href="https://thursdayboots.com/products/mens-black-captain" target="_blank" style="font-size:.75rem;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid rgba(212,160,23,.25);">ThursdayBoots.com</a></div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$199</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:65%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.amazon.com/SEIKO-Silver-Stainless-Presage-Automatic/dp/B0B88JLPC4" target="_blank" style="color:var(--gold-lt);">Seiko Presage Style60's SSA447</a> — day watch, leather strap, automatic</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Amazon or Seiko.com</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$150–280</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:58%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val"><a href="https://www.citizenwatch.com/us/en/product/NJ0150-56E.html" target="_blank" style="color:var(--gold-lt);">Citizen Tsuyosa NJ0150-56E</a> — night watch, black dial, steel bracelet</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Amazon or Citizen.com</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$200–400</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:52%;"></div></div></div></div>
+</div>
+<div class="mob-row" style="border-bottom:1px solid var(--rim);">
+<div class="mob-cell"><span class="mob-lbl">Item</span><div class="mob-val">Gold Cuban Chain — 20", 4–6mm, vermeil or 10k gold (20" = right length for 5'5" open collar)</div></div>
+<div class="mob-cell"><span class="mob-lbl">Where to Buy</span><div class="mob-val">Amazon Gold, Local jeweler</div></div>
+<div class="mob-cell"><span class="mob-lbl">Phase</span><div class="mob-val">Phase 4</div></div>
+<div class="mob-cell"><span class="mob-lbl">Cost</span><div class="mob-val">$80–250</div></div>
+<div class="mob-cell"><span class="mob-lbl">Priority</span><div class="mob-val"><div style="background:rgba(255,255,255,.04);height:3px;min-width:80px;"><div style="height:100%;background:var(--gold-lt);width:60%;"></div></div></div></div>
+</div>
+<div class="mob-header" style="border-top:1px solid rgba(212,160,23,.12);">Phase 0 + 1 + 2 Complete</div>
+</div>
   </div>
 </div>
 
@@ -2303,27 +2176,11 @@ function renderSw(id,arr){document.getElementById(id).innerHTML=arr.map(s=>`<div
 </script>
 
 <script>
-// Inject data-label attributes on all table cells for mobile CSS
-(function(){
-  document.querySelectorAll('table').forEach(function(table){
-    var headers = Array.from(table.querySelectorAll('thead th')).map(function(th){
-      return th.textContent.trim();
-    });
-    if(!headers.length) return;
-    table.querySelectorAll('tbody tr, tfoot tr').forEach(function(row){
-      Array.from(row.querySelectorAll('td')).forEach(function(td, i){
-        if(td.getAttribute('colspan')) return; // skip section header rows
-        if(headers[i]) td.setAttribute('data-label', headers[i]);
-      });
-    });
-  });
-})();
-// Service Worker registration
 if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
+  window.addEventListener('load',function(){
     navigator.serviceWorker.register('./sw.js')
-      .then(function(reg){ console.log('SW registered:', reg.scope); })
-      .catch(function(err){ console.log('SW error:', err); });
+      .then(function(r){console.log('SW:',r.scope);})
+      .catch(function(e){console.log('SW error:',e);});
   });
 }
 </script>
