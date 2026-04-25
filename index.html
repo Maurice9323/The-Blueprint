@@ -46,7 +46,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--earth);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+body{background:var(--earth);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;padding-bottom:calc(72px + env(safe-area-inset-bottom));}
 
 /* grain texture */
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");}
@@ -379,6 +379,50 @@ img,canvas{max-width:100% !important;height:auto;}
 
 /* Font sizes for small labels */
 .sec-sub{font-size:.84rem;}
+</style>
+
+<style>
+/* ── BOTTOM TAB BAR ── */
+#bottom-nav{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:900;
+  background:rgba(18,10,4,.97);
+  border-top:1px solid rgba(212,160,23,.15);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  display:flex;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:env(safe-area-inset-bottom);
+  scrollbar-width:none;
+}
+#bottom-nav::-webkit-scrollbar{display:none;}
+.bnav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  padding:.6rem .9rem;
+  text-decoration:none;
+  color:rgba(245,237,216,.3);
+  flex-shrink:0;
+  transition:color .2s;
+  border-top:2px solid transparent;
+  min-width:60px;
+}
+.bnav-item.active{
+  color:var(--gold-lt);
+  border-top-color:var(--gold-lt);
+}
+.bnav-icon{font-size:1.15rem;line-height:1;}
+.bnav-lbl{
+  font-size:.38rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
 </style>
 </head>
 <body>
@@ -1335,7 +1379,7 @@ img,canvas{max-width:100% !important;height:auto;}
 
 <!-- COLOR ANALYZER -->
 <div class="rule"></div>
-<div class="section">
+<div id="color" class="section">
   <p class="eyebrow">09 — Color DNA</p>
   <h2 class="sec-title">Your Skin Tone <em>Palette</em></h2>
   <p class="sec-sub">Upload a photo, click on your skin, and get your personal color system — calibrated for both bright DC natural light and the harsh indoor fluorescent environments you spend time in. Runs entirely locally on your device. Nothing leaves your browser.</p>
@@ -1416,7 +1460,7 @@ img,canvas{max-width:100% !important;height:auto;}
 
 <!-- BUDGET -->
 <div class="rule"></div>
-<div class="section">
+<div id="budget" class="section">
   <p class="eyebrow">11 — The Budget Plan</p>
   <h2 class="sec-title">$1,500 <em>Spent Right</em></h2>
   <p class="sec-sub">Phase 0 costs almost nothing. Phase 1 is the highest impact per dollar. The blazer in Phase 2 is the most important single silhouette purchase. Everything else builds from there in order of impact.</p>
@@ -2183,6 +2227,54 @@ if('serviceWorker' in navigator){
       .catch(function(e){console.log('SW error:',e);});
   });
 }
+</script>
+
+<nav id="bottom-nav" aria-label="Section navigation">
+  <a href="#start"     class="bnav-item active"><span class="bnav-icon">✦</span><span class="bnav-lbl">Start</span></a>
+  <a href="#purge"     class="bnav-item"><span class="bnav-icon">🗑</span><span class="bnav-lbl">Purge</span></a>
+  <a href="#basics"    class="bnav-item"><span class="bnav-icon">🧦</span><span class="bnav-lbl">Basics</span></a>
+  <a href="#wardrobe"  class="bnav-item"><span class="bnav-icon">👔</span><span class="bnav-lbl">Wardrobe</span></a>
+  <a href="#sneakers"  class="bnav-item"><span class="bnav-icon">👟</span><span class="bnav-lbl">Sneakers</span></a>
+  <a href="#occasions" class="bnav-item"><span class="bnav-icon">🗓</span><span class="bnav-lbl">Occasions</span></a>
+  <a href="#fragrance" class="bnav-item"><span class="bnav-icon">🌿</span><span class="bnav-lbl">Scent</span></a>
+  <a href="#hair"      class="bnav-item"><span class="bnav-icon">✂️</span><span class="bnav-lbl">Hair</span></a>
+  <a href="#skin"      class="bnav-item"><span class="bnav-icon">✨</span><span class="bnav-lbl">Skin</span></a>
+  <a href="#color"     class="bnav-item"><span class="bnav-icon">🎨</span><span class="bnav-lbl">Color</span></a>
+  <a href="#identity"  class="bnav-item"><span class="bnav-icon">💡</span><span class="bnav-lbl">Identity</span></a>
+  <a href="#budget"    class="bnav-item"><span class="bnav-icon">💰</span><span class="bnav-lbl">Budget</span></a>
+  <a href="#shoplist"  class="bnav-item"><span class="bnav-icon">🛍</span><span class="bnav-lbl">Shop</span></a>
+  <a href="#seasonal"  class="bnav-item"><span class="bnav-icon">🌦</span><span class="bnav-lbl">Seasons</span></a>
+</nav>
+
+<script>
+(function(){
+  var sections = ['start','purge','basics','wardrobe','sneakers','occasions',
+                  'fragrance','hair','skin','color','identity','budget','shoplist','seasonal'];
+  var links = {};
+  sections.forEach(function(id){
+    var el = document.querySelector('#bottom-nav a[href="#'+id+'"]');
+    if(el) links[id] = el;
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
+        Object.values(links).forEach(function(l){ l.classList.remove('active'); });
+        if(links[id]){
+          links[id].classList.add('active');
+          // scroll tab into view
+          links[id].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+        }
+      }
+    });
+  },{rootMargin:'-30% 0px -60% 0px', threshold:0});
+
+  sections.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) observer.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
