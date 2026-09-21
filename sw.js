@@ -1,7 +1,7 @@
 // The Blueprint — service worker
 // Page: network-first (always shows the latest version when online, cached copy offline)
 // Icons + manifest: cache-first (rarely change)
-const CACHE_NAME = 'blueprint-v3';
+const CACHE_NAME = 'blueprint-v4';
 const CORE_ASSETS = ['./', './index.html', './manifest.json'];
 const OPTIONAL_ASSETS = ['./icon-192.png', './icon-512.png'];
 
