@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -46,7 +46,7 @@
   --go-lt:#48B878;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(52px + env(safe-area-inset-top, 0px) + 16px);}
 body{background:var(--earth);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;padding-bottom:calc(72px + env(safe-area-inset-bottom));}
 
 /* grain texture */
@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:800;height:52px;background:rgba(
 .nav-links a:hover{color:var(--cream);}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:52px;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.hero{min-height:100vh;padding-top:calc(52px + env(safe-area-inset-top, 0px) + 24px);position:relative;overflow:hidden;display:flex;flex-direction:column;}
 .hero-bg{
   position:absolute;inset:0;
   background:
@@ -421,6 +421,8 @@ img,canvas{max-width:100% !important;height:auto;}
   padding-bottom:env(safe-area-inset-bottom);
   scrollbar-width:none;
 }
+/* Tabs live at the top — sit below the iPhone status bar (time/battery) */
+#bottom-nav{top:0;bottom:auto;height:calc(52px + env(safe-area-inset-top, 0px));padding-top:env(safe-area-inset-top, 0px);padding-bottom:0;}
 #bottom-nav::-webkit-scrollbar{display:none;}
 .bnav-item{
   display:flex;
